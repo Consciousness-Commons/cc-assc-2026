@@ -1,1 +1,1 @@
-# cc-assc-2026
+# Consciousness Commons @ASSC2026
