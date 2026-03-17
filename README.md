@@ -10,7 +10,7 @@ scientific projects using open datasets in consciousness science.
 
 ## Website
 
-The site is live at: https://Consciousness-Commons.github.io/cc-assc-2026
+The site is live at: https://consciousness-commons.github.io/cc-assc-2026/
 
 ## Structure
 
