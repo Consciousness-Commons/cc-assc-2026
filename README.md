@@ -12,6 +12,10 @@ scientific projects using open datasets in consciousness science.
 
 The site is live at: https://consciousness-commons.github.io/cc-assc-2026/
 
+## Contact information
+
+Email the Consciousness Commons Organizing Committee: consciousness.commons@gmail.com
+
 ## Structure
 
 - `index.html` — Landing page 
