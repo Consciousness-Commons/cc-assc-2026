@@ -47,19 +47,14 @@ nav a:hover {
 /* ── Header ── */
 header {
   width: 100%;
-  max-width: 600px;       /* matches image width */
-  height: 200px;          /* matches image height */
-
-  margin: 0 auto;         /* centers header */
+  height: 260px; /* adjust as needed */
 
   background-image: url('github-header-2.png');
-  background-size: 600px 200px;   /* exact size = no blur */
-  background-repeat: no-repeat;
+  background-size: cover;        /* now safe to use */
   background-position: center;
+  background-repeat: no-repeat;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-bottom: 5px solid var(--orange);
 }
 
 header h1 {
