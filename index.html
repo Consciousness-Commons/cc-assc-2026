@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consciousness Commons — About</title>
+  <link rel="icon" type="image/png" href="assets/favicon-1.png" />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+:root{--dark-green:#104b38;--green:#699441;--bright-orange:#e0520e;--orange:#f08716;--yellow:#ffc337;--light-yellow:#fee289;--light-orange:#f2c87d;--cream:#f3f0e9;--white:#ffffff;--text-dark:#1a1a1a;--text-mid:#3a3a3a}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.7;font-size:17px}
+h1,h2,h3,h4,h5{font-family:'Century Gothic','Futura','Trebuchet MS',sans-serif;font-weight:700;line-height:1.15;letter-spacing:-0.02em}
+a{color:var(--dark-green);text-decoration:none}
+a:hover{color:var(--bright-orange)}
+img{max-width:100%;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem}
+/* NAV */
+.site-nav{background:var(--dark-green);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 2rem;max-width:1100px;margin:0 auto}
+.nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.nav-logo img{width:36px;height:36px;border-radius:6px;object-fit:cover;flex-shrink:0}
+.nav-logo-text{font-family:'Century Gothic','Futura',sans-serif;font-weight:700;font-size:.9rem;color:var(--cream);letter-spacing:.03em;line-height:1.2}
+.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none;padding:0;margin:0}
+.nav-links li{list-style:none}
+.nav-links a{color:var(--light-yellow);font-size:.85rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.45rem .85rem;border-radius:4px;transition:background .2s,color .2s;font-family:'Century Gothic','Futura',sans-serif;display:block}
+.nav-links a:hover,.nav-links a.active{background:var(--bright-orange);color:var(--white)}
+.nav-links .nav-cta a{background:var(--yellow);color:var(--dark-green)}
+.nav-links .nav-cta a:hover{background:var(--bright-orange);color:var(--white)}
+/* HERO */
+.hero{width:100%;position:relative;overflow:hidden}
+.hero img{width:100%;height:auto;display:block}
+/* LABELS & SECTIONS */
+.section-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--bright-orange);margin-bottom:.6rem;font-family:'Century Gothic','Futura',sans-serif}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--dark-green);margin-bottom:1.2rem}
+.section-intro{font-size:1.1rem;color:var(--text-mid);max-width:720px;line-height:1.75}
+.section{padding:5rem 0}
+.section--alt{background:var(--dark-green);color:var(--cream)}
+.section--alt .section-title{color:var(--light-yellow)}
+.section--alt .section-label{color:var(--yellow)}
+.section--alt p{color:var(--light-yellow);opacity:.9}
+.section--tint{background:var(--light-yellow)}
+/* HIGHLIGHT STRIP */
+.highlight-strip{background:var(--bright-orange);color:var(--white);padding:1.4rem 2rem;text-align:center;font-weight:700;font-size:1.05rem;font-family:'Century Gothic','Futura',sans-serif;letter-spacing:.02em}
+.highlight-strip a{color:var(--yellow);text-decoration:underline}
+/* CARDS */
+.card-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:2.5rem}
+.card{background:var(--white);border-radius:12px;padding:2rem;border-top:4px solid var(--green);box-shadow:0 2px 16px rgba(16,75,56,.08);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(16,75,56,.14)}
+.card h3{font-size:1.05rem;color:var(--dark-green);margin-bottom:.6rem}
+.card p{font-size:.95rem;color:var(--text-mid);line-height:1.65}
+.card--orange{border-top-color:var(--bright-orange)}
+.card--yellow{border-top-color:var(--yellow)}
+/* BUTTONS */
+.btn{display:inline-block;font-family:'Century Gothic','Futura',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;padding:.85rem 2rem;border-radius:6px;transition:background .2s,transform .15s;cursor:pointer;border:none}
+.btn-primary{background:var(--bright-orange);color:var(--white)}
+.btn-primary:hover{background:var(--orange);color:var(--white);transform:translateY(-2px)}
+.btn-secondary{background:transparent;color:var(--dark-green);border:2.5px solid var(--dark-green)}
+.btn-secondary:hover{background:var(--dark-green);color:var(--cream)}
+/* FOOTER */
+.site-footer{background:var(--dark-green);color:var(--light-yellow);padding:3rem 2rem 2rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.footer-brand h3{color:var(--cream);font-size:1.1rem;margin-bottom:.4rem}
+.footer-brand p{font-size:.88rem;opacity:.75;line-height:1.6}
+.footer-links h4{color:var(--yellow);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem}
+.footer-links ul{list-style:none;padding:0}
+.footer-links ul li{margin-bottom:.4rem}
+.footer-links ul li a{color:var(--light-yellow);opacity:.8;font-size:.9rem}
+.footer-links ul li a:hover{opacity:1;color:var(--yellow)}
+.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.12);font-size:.82rem;opacity:.55;text-align:center}
+@media(max-width:768px){.nav-inner{flex-wrap:wrap;gap:.5rem}.nav-links{flex-wrap:wrap;gap:.1rem}.footer-inner{grid-template-columns:1fr}.section{padding:3rem 0}}
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <span class="nav-logo-text">Consciousness Commons</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">About</a></li>
+        <li><a href="apply.html">How to Apply</a></li>
+        <li><a href="timeline.html">Timeline</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="apply.html">Apply Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <img src="assets/github-header-2.png" alt="Consciousness Commons — Building Collaborative Science with Open Consciousness Data" />
+  </section>
+
+  <div class="highlight-strip">
+    📅 &nbsp;Applications open <strong>March 23 – April 13, 2026</strong> &nbsp;·&nbsp;
+    Workshop: <strong>July 4–5, 2026, Santiago, Chile</strong> &nbsp;·&nbsp;
+    <a href="apply.html">Apply now →</a>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Overview</span>
+      <h2 class="section-title">What is Consciousness Commons?</h2>
+      <p class="section-intro">
+        Consciousness Commons is a two-day collaborative satellite workshop following
+        <strong>ASSC 2026</strong> that brings together early-career researchers to develop
+        new scientific projects using open datasets in consciousness science.
+      </p>
+      <p class="section-intro" style="margin-top:1rem;">
+        Participants work in interdisciplinary teams to formulate hypothesis-driven research
+        questions and develop rigorous analysis plans using openly shared datasets — including
+        the <strong>Cogitate Consortium</strong> datasets. The workshop combines hands-on
+        exposure to open scientific workflows with structured collaborative project development
+        and guidance on preregistration and reproducible research practices.
+      </p>
+      <p class="section-intro" style="margin-top:1rem;">
+        By the end of the workshop, each team will have produced a <strong>preregistered
+        research plan</strong> specifying their hypotheses, dataset, and analysis pipeline —
+        and teams will be eligible to compete for <strong style="color:var(--bright-orange);">$25,000 in seed funding</strong>
+        to support their project after the event.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <span class="section-label">Participation</span>
+      <h2 class="section-title">What Will Participants Do?</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Formulate a Research Question</h3>
+          <p>Develop a clear scientific research question addressable with existing open consciousness datasets.</p>
+        </div>
+        <div class="card card--orange">
+          <h3>Identify a Testable Hypothesis</h3>
+          <p>Target neural correlates of consciousness or predictions from competing theoretical frameworks.</p>
+        </div>
+        <div class="card card--yellow">
+          <h3>Select an Open Dataset</h3>
+          <p>Explore and choose appropriate open datasets, including those from the Cogitate Consortium.</p>
+        </div>
+        <div class="card">
+          <h3>Develop an Analysis Plan</h3>
+          <p>Specify neural measures and analysis methods required to test your hypothesis rigorously.</p>
+        </div>
+        <div class="card card--orange">
+          <h3>Build a Reproducible Pipeline</h3>
+          <p>Follow best practices in open and FAIR scientific workflows for transparent, reproducible analysis.</p>
+        </div>
+        <div class="card card--yellow">
+          <h3>Preregister on OSF</h3>
+          <p>Draft and submit a preregistered research plan on the Open Science Framework before any analyses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <span class="section-label">Why a Commons?</span>
+      <h2 class="section-title">Open Data + Open Minds</h2>
+      <p style="max-width:760px;line-height:1.8;font-size:1.05rem;">
+        Over the past decade, the scientific study of consciousness has generated large-scale,
+        openly shared datasets through initiatives like the
+        <a href="https://arc-cogitate.com" target="_blank" style="color:var(--yellow);text-decoration:underline;">Cogitate Consortium</a>.
+        These datasets create unprecedented opportunities to test new hypotheses, reanalyse
+        existing results, and evaluate competing theoretical predictions.
+      </p>
+      <p style="max-width:760px;line-height:1.8;font-size:1.05rem;margin-top:1.2rem;">
+        Consciousness Commons creates a temporary scientific commons where early-career
+        researchers can work productively with shared datasets, develop collaborative research
+        ideas, and build the practical skills necessary to conduct transparent and reproducible science.
+      </p>
+      <div style="display:flex;gap:2rem;margin-top:3rem;flex-wrap:wrap;">
+        <div style="flex:1;min-width:180px;text-align:center;padding:1.5rem;background:rgba(255,255,255,.07);border-radius:10px;">
+          <div style="font-size:2.6rem;font-weight:900;color:var(--yellow);font-family:'Century Gothic','Futura',sans-serif;">$25K</div>
+          <div style="font-size:.95rem;color:var(--light-yellow);margin-top:.3rem;">in seed funding prizes</div>
+        </div>
+        <div style="flex:1;min-width:180px;text-align:center;padding:1.5rem;background:rgba(255,255,255,.07);border-radius:10px;">
+          <div style="font-size:2.6rem;font-weight:900;color:var(--yellow);font-family:'Century Gothic','Futura',sans-serif;">2 Days</div>
+          <div style="font-size:.95rem;color:var(--light-yellow);margin-top:.3rem;">intensive collaborative workshop</div>
+        </div>
+        <div style="flex:1;min-width:180px;text-align:center;padding:1.5rem;background:rgba(255,255,255,.07);border-radius:10px;">
+          <div style="font-size:2.6rem;font-weight:900;color:var(--yellow);font-family:'Century Gothic','Futura',sans-serif;">July 4–5</div>
+          <div style="font-size:.95rem;color:var(--light-yellow);margin-top:.3rem;">Santiago, Chile — post ASSC 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Team</span>
+      <h2 class="section-title">Organizing Committee</h2>
+      <p class="section-intro">An international team of consciousness researchers and open-science advocates.</p>
+      <div style="margin-top:2.5rem;text-align:center;">
+        <img src="assets/organizing-committee-1.png"
+             alt="Organizing Committee: Tanya Brown, Oscar Ferrante, Rony Hirschhorn, Alex Lepauvre, Lucia Melloni, David Potgeiter, Zefan Zheng"
+             style="max-width:680px;width:100%;border-radius:16px;margin:0 auto;box-shadow:0 8px 40px rgba(16,75,56,.18);" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <span class="section-label">Partners</span>
+      <h2 class="section-title">Supported By</h2>
+      <div style="display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:1.5rem;">
+        <div class="card" style="flex:1;min-width:220px;border-top-color:var(--dark-green);">
+          <h3>ASSC</h3>
+          <p>Official satellite event of the Association for the Scientific Study of Consciousness conference.</p>
+        </div>
+        <div class="card" style="flex:1;min-width:220px;border-top-color:var(--green);">
+          <h3>brainlife.io</h3>
+          <p>Data and analysis platform providing free computational resources and Cogitate datasets in BIDS format.</p>
+        </div>
+        <div class="card" style="flex:1;min-width:220px;border-top-color:var(--orange);">
+          <h3>TWCF</h3>
+          <p>Templeton World Charity Foundation — source of sub-grant funding for the prizes.</p>
+        </div>
+        <div class="card" style="flex:1;min-width:220px;border-top-color:var(--yellow);">
+          <h3>Datacite</h3>
+          <p>Granting partner supporting open data infrastructure and persistent identifiers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" style="text-align:center;padding:3.5rem 2rem;">
+    <span class="section-label">Get Involved</span>
+    <h2 class="section-title" style="margin-bottom:1rem;">Ready to Join the Commons?</h2>
+    <p style="max-width:540px;margin:0 auto 2rem;color:var(--text-mid);font-size:1.05rem;">
+      Applications are open to early-career researchers with a passion for open science and consciousness research.
+    </p>
+    <a class="btn btn-primary" href="apply.html">View How to Apply</a>
+    &nbsp;&nbsp;
+    <a class="btn btn-secondary" href="timeline.html">See Timeline</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Consciousness Commons</h3>
+        <p>Building Collaborative Science with Open Consciousness Data.<br>
+        A satellite event of ASSC 2026 · Santiago, Chile · July 4–5, 2026</p>
+        <p style="margin-top:.75rem;">✉️ <a href="mailto:consciousness.commons@gmail.com" style="color:var(--light-yellow);">consciousness.commons@gmail.com</a></p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">About</a></li>
+          <li><a href="apply.html">How to Apply</a></li>
+          <li><a href="timeline.html">Timeline</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">Consciousness Commons is supported by TWCF, brainlife.io, and Datacite.</div>
+  </footer>
+
+</body>
+</html>
