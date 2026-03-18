@@ -46,16 +46,20 @@ nav a:hover {
 
 /* ── Header ── */
 header {
-  background-image: url('github-header-2.png'); /* adjust path */
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  max-width: 600px;       /* matches image width */
+  height: 200px;          /* matches image height */
+
+  margin: 0 auto;         /* centers header */
+
+  background-image: url('github-header-2.png');
+  background-size: 600px 200px;   /* exact size = no blur */
   background-repeat: no-repeat;
+  background-position: center;
 
-  color: var(--cream);
-  text-align: center;
-  padding: 80px 40px 70px;
-
-  border-bottom: 5px solid var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header h1 {
