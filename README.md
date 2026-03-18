@@ -19,5 +19,6 @@ Email the Consciousness Commons Organizing Committee: consciousness.commons@gmai
 ## Structure
 
 - `index.html` — Landing page 
-- `about.html` — About page
+- `timeline.html` — Event timeline
+- 'register.html' - Apply to join
 - `style.css` — Shared styles
