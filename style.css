@@ -46,10 +46,15 @@ nav a:hover {
 
 /* ── Header ── */
 header {
-  background-color: var(--green-dark);
+  background-image: url('/main/github-header-1.png'); /* adjust path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   color: var(--cream);
   text-align: center;
-  padding: 60px 40px 50px;
+  padding: 80px 40px 70px;
+
   border-bottom: 5px solid var(--orange);
 }
 
