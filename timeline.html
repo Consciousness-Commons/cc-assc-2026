@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consciousness Commons — Timeline</title>
+  <link rel="icon" type="image/png" href="assets/favicon-1.png" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    /* ── Timeline-specific styles ── */
+    .timeline {
+      position: relative;
+      max-width: 820px;
+      margin: 3rem auto 0;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--bright-orange), var(--yellow), var(--green));
+      border-radius: 2px;
+    }
+
+    .tl-item {
+      position: relative;
+      padding: 0 0 2.8rem 2.8rem;
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: -14px;
+      top: 4px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--bright-orange);
+      border: 3px solid var(--cream);
+      box-shadow: 0 0 0 3px var(--bright-orange);
+      z-index: 1;
+    }
+
+    .tl-dot--yellow { background: var(--yellow); box-shadow: 0 0 0 3px var(--yellow); }
+    .tl-dot--green  { background: var(--green);  box-shadow: 0 0 0 3px var(--green); }
+    .tl-dot--dark   { background: var(--dark-green); box-shadow: 0 0 0 3px var(--dark-green); }
+
+    .tl-date {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bright-orange);
+      margin-bottom: 0.3rem;
+      font-family: 'ITC Avant Garde Gothic', 'Century Gothic', 'Futura', sans-serif;
+    }
+
+    .tl-date--yellow { color: var(--orange); }
+    .tl-date--green  { color: var(--green); }
+    .tl-date--dark   { color: var(--dark-green); }
+
+    .tl-title {
+      font-size: 1.2rem;
+      color: var(--dark-green);
+      margin-bottom: 0.4rem;
+    }
+
+    .tl-desc {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      max-width: 560px;
+    }
+
+    .tl-item--highlight .tl-title {
+      font-size: 1.45rem;
+      color: var(--bright-orange);
+    }
+
+    .tl-item--highlight .tl-desc {
+      font-size: 1rem;
+    }
+
+    /* Phase headers */
+    .tl-phase {
+      display: inline-block;
+      background: var(--dark-green);
+      color: var(--cream);
+      font-family: 'ITC Avant Garde Gothic', 'Century Gothic', 'Futura', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      margin-left: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <img src="assets/favicon-1.png" alt="Consciousness Commons logo" />
+        <span class="nav-logo-text">Consciousness<br>Commons</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="apply.html">How to Apply</a></li>
+        <li><a href="timeline.html" class="active">Timeline</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="https://forms.gle/c1xpSTk2sJ3oTzHZ6" target="_blank">Apply Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Hero ── -->
+  <div class="page-hero">
+    <div class="container">
+      <h1>Timeline</h1>
+      <p>Key dates from applications through the workshop and prize announcements.</p>
+    </div>
+  </div>
+
+  <!-- ── Timeline ── -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Key Dates</span>
+      <h2 class="section-title">What's Coming Up</h2>
+
+      <!-- Phase: Applications -->
+      <span class="tl-phase">Phase 1 — Applications</span>
+
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">March 23, 2026</div>
+          <h3 class="tl-title">Application Window Opens</h3>
+          <p class="tl-desc">
+            The application form goes live. Submit your application via Google Forms.
+            <a href="apply.html">See eligibility criteria →</a>
+          </p>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">April 13, 2026</div>
+          <h3 class="tl-title">Application Deadline</h3>
+          <p class="tl-desc">
+            Final day to submit your application. Late submissions will not be considered.
+            Applications close at end of day.
+          </p>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot tl-dot--yellow"></div>
+          <div class="tl-date tl-date--yellow">April 22–27, 2026</div>
+          <h3 class="tl-title">Applicants Notified</h3>
+          <p class="tl-desc">
+            All applicants will be contacted with a decision during this window.
+            Accepted participants will receive onboarding instructions.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Phase: Pre-event -->
+      <span class="tl-phase" style="margin-top:1rem;">Phase 2 — Pre-Event</span>
+
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot tl-dot--yellow"></div>
+          <div class="tl-date tl-date--yellow">May 11–16, 2026</div>
+          <h3 class="tl-title">Pre-Event Virtual Kick-off</h3>
+          <p class="tl-desc">
+            A virtual session to begin the Mind-Match team-facilitation process and complete
+            light onboarding before arriving in Santiago. Exact date within this window to be confirmed.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Phase: Workshop -->
+      <span class="tl-phase" style="margin-top:1rem;">Phase 3 — Workshop</span>
+
+      <div class="timeline">
+
+        <div class="tl-item tl-item--highlight">
+          <div class="tl-dot tl-dot--green" style="width:28px; height:28px; left:-17px; top:2px;"></div>
+          <div class="tl-date tl-date--green" style="font-size:0.85rem;">July 4–5, 2026</div>
+          <h3 class="tl-title">⭐ Consciousness Commons — Santiago</h3>
+          <p class="tl-desc">
+            Two days of intensive collaborative science in Santiago, Chile, immediately following ASSC 2026.
+            Teams form, formulate hypotheses, select datasets, build analysis plans, and draft OSF preregistrations.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Phase: Post-workshop -->
+      <span class="tl-phase" style="margin-top:1rem;">Phase 4 — Post-Workshop</span>
+
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot tl-dot--dark"></div>
+          <div class="tl-date tl-date--dark">July 5–12, 2026</div>
+          <h3 class="tl-title">Award Proposal Submission Deadline</h3>
+          <p class="tl-desc">
+            Teams wishing to compete for prize funding must submit their formal proposal
+            and OSF preregistration within one week of the workshop closing.
+          </p>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot tl-dot--dark"></div>
+          <div class="tl-date tl-date--dark">July 20, 2026</div>
+          <h3 class="tl-title">Award Announcement</h3>
+          <p class="tl-desc">
+            Prize winners announced. Up to <strong>$25,000 in seed funding</strong> distributed
+            across winning teams to support continued research.
+          </p>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot tl-dot--dark"></div>
+          <div class="tl-date tl-date--dark">August 10 – November 8, 2026</div>
+          <h3 class="tl-title">Project Period</h3>
+          <p class="tl-desc">
+            Funded teams carry out their preregistered research projects with support from
+            brainlife.io and the broader Consciousness Commons community.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Summary table ── -->
+  <section class="section section--tint" style="padding-top:1rem; padding-bottom:4rem;">
+    <div class="container">
+      <span class="section-label">At a Glance</span>
+      <h2 class="section-title">Full Schedule</h2>
+      <div style="overflow-x:auto; margin-top:1.5rem;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+          <thead>
+            <tr style="background:var(--dark-green); color:var(--cream);">
+              <th style="padding:0.9rem 1.2rem; text-align:left; font-family:'ITC Avant Garde Gothic','Century Gothic',sans-serif; font-weight:700; font-size:0.82rem; letter-spacing:0.08em;">Milestone</th>
+              <th style="padding:0.9rem 1.2rem; text-align:left; font-family:'ITC Avant Garde Gothic','Century Gothic',sans-serif; font-weight:700; font-size:0.82rem; letter-spacing:0.08em;">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:var(--white);">
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid #e8e4d8;">Application window opens</td>
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid #e8e4d8; font-weight:600; color:var(--bright-orange);">March 23 – April 13, 2026</td>
+            </tr>
+            <tr style="background:var(--cream);">
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid #e8e4d8;">Application deadline</td>
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid #e8e4d8; font-weight:600; color:var(--bright-orange);">April 13, 2026</td>
+            </tr>
+            <tr style="background:var(--white);">
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid #e8e4d8;">Applicants notified</td>
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid #e8e4d8; font-weight:600; color:var(--orange);">April 22–27, 2026</td>
+            </tr>
+            <tr style="background:var(--cream);">
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid #e8e4d8;">Pre-event virtual kick-off</td>
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid #e8e4d8; font-weight:600; color:var(--orange);">May 11–16, 2026</td>
+            </tr>
+            <tr style="background:#104b38; color:var(--cream);">
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.1); font-weight:700;">⭐ Consciousness Commons — Santiago</td>
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.1); font-weight:700; color:var(--yellow);">July 4–5, 2026</td>
+            </tr>
+            <tr style="background:var(--white);">
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid #e8e4d8;">Award proposal submission deadline</td>
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid #e8e4d8; font-weight:600; color:var(--green);">July 5–12, 2026</td>
+            </tr>
+            <tr style="background:var(--cream);">
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid #e8e4d8;">Award announcement</td>
+              <td style="padding:0.85rem 1.2rem; border-bottom:1px solid #e8e4d8; font-weight:600; color:var(--green);">July 20, 2026</td>
+            </tr>
+            <tr style="background:var(--white);">
+              <td style="padding:0.85rem 1.2rem;">Project period</td>
+              <td style="padding:0.85rem 1.2rem; font-weight:600; color:var(--dark-green);">August 10 – November 8, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section" style="text-align:center; padding:3rem 2rem;">
+    <h2 class="section-title" style="margin-bottom:1rem;">Don't Miss the Deadline</h2>
+    <p style="max-width:480px; margin:0 auto 2rem; color:var(--text-mid); font-size:1.05rem;">
+      Applications close <strong>April 13, 2026</strong>. Submit yours today.
+    </p>
+    <a class="btn btn-primary" href="https://forms.gle/c1xpSTk2sJ3oTzHZ6" target="_blank" rel="noopener noreferrer">
+      Apply Now →
+    </a>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Consciousness Commons</h3>
+        <p>Building Collaborative Science with Open Consciousness Data.<br>
+        A satellite event of ASSC 2026 · Santiago, Chile · July 4–5, 2026</p>
+        <p style="margin-top:0.75rem;">
+          ✉️ <a href="mailto:consciousness.commons@gmail.com" style="color:var(--light-yellow);">consciousness.commons@gmail.com</a>
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">About</a></li>
+          <li><a href="apply.html">How to Apply</a></li>
+          <li><a href="timeline.html">Timeline</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Consciousness Commons is supported by TWCF, brainlife.io, and Datacite.
+    </div>
+  </footer>
+
+</body>
+</html>
