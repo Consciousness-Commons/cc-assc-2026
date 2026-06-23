@@ -25,797 +25,1588 @@
   --ok:#2f8f4e;
   --err:#c0392b;
 }
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Open Sans',sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.7;font-size:16px}
 h1,h2,h3,h4,h5{font-family:'Century Gothic','Futura','Trebuchet MS',sans-serif;font-weight:700;line-height:1.18;letter-spacing:-0.02em}
+
 a{color:var(--dark-green)}
+
 a:hover{color:var(--bright-orange)}
 
+
+
 /* LAYOUT */
+
 .layout{display:flex;min-height:100vh;align-items:stretch}
+
 .sidebar{width:300px;flex-shrink:0;background:var(--dark-green);color:var(--cream);position:sticky;top:0;height:100vh;overflow-y:auto;padding:1.6rem 1.2rem;display:flex;flex-direction:column;gap:.4rem}
+
 .main{flex:1;min-width:0}
+
 .main-inner{max-width:780px;margin:0 auto;padding:2.6rem 2.2rem 4rem}
 
+
+
 /* SIDEBAR */
+
 .brand{display:flex;flex-direction:column;gap:.15rem;padding:.2rem .4rem 1rem;border-bottom:1px solid rgba(255,255,255,.14);margin-bottom:.8rem}
+
 .brand .kicker{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);font-weight:700}
+
 .brand .title{font-family:'Century Gothic','Futura',sans-serif;font-weight:700;font-size:1.05rem;color:var(--cream);line-height:1.2;margin-top:.25rem}
+
 .site-return{display:inline-flex;align-items:center;gap:.4rem;color:var(--light-yellow);font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.85;text-decoration:none;padding:.2rem .4rem;margin-bottom:.3rem}
+
 .site-return:hover{color:var(--yellow);opacity:1}
+
 .mobile-return{color:var(--cream);text-decoration:none}
+
 .mobile-return:hover{color:var(--yellow)}
+
 .progress-wrap{padding:.2rem .4rem .9rem}
+
 .progress-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--light-yellow);opacity:.85;margin-bottom:.4rem;display:flex;justify-content:space-between}
+
 .progress-track{height:8px;border-radius:5px;background:rgba(255,255,255,.14);overflow:hidden}
+
 .progress-bar{height:100%;width:0;background:var(--yellow);border-radius:5px;transition:width .4s ease}
 
+
+
 .nav-section{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);opacity:.8;font-weight:700;padding:.9rem .5rem .3rem}
+
 .nav-item{display:flex;align-items:center;gap:.6rem;width:100%;text-align:left;background:transparent;border:none;color:var(--light-yellow);font-family:'Open Sans',sans-serif;font-size:.9rem;font-weight:600;padding:.6rem .6rem;border-radius:7px;cursor:pointer;transition:background .15s,color .15s;line-height:1.25}
+
 .nav-item:hover{background:rgba(255,255,255,.08);color:var(--white)}
+
 .nav-item.active{background:var(--bright-orange);color:var(--white)}
+
 .nav-item .dot{width:22px;height:22px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;font-family:'Century Gothic',sans-serif}
+
 .nav-item.active .dot{background:rgba(255,255,255,.25)}
+
 .nav-item.done .dot{background:var(--yellow);color:var(--dark-green)}
+
 .nav-item .lbl{flex:1}
+
 .nav-foot{margin-top:auto;padding:1rem .5rem .2rem;font-size:.72rem;color:var(--light-yellow);opacity:.62;line-height:1.55;border-top:1px solid rgba(255,255,255,.12)}
+
 .nav-foot a{color:var(--yellow)}
+
 .nav-foot a:hover{color:var(--white)}
+
 .nav-foot .doi{display:inline-block;margin-top:.4rem;font-weight:700}
 
+
+
 /* MOBILE NAV TOGGLE */
+
 .mobile-bar{display:none;position:sticky;top:0;z-index:60;background:var(--dark-green);color:var(--cream);padding:.8rem 1rem;align-items:center;justify-content:space-between}
+
 .mobile-bar .title{font-family:'Century Gothic',sans-serif;font-weight:700;font-size:.95rem}
+
 .hamb{background:var(--bright-orange);color:#fff;border:none;border-radius:6px;padding:.45rem .7rem;font-size:1rem;cursor:pointer}
 
+
+
 /* CONTENT */
+
 .view{display:none;animation:fade .32s ease}
+
 .view.active{display:block}
+
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
+
+
 .eyebrow{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--bright-orange);margin-bottom:.5rem}
+
 .view h1{font-size:clamp(1.8rem,3.8vw,2.4rem);color:var(--dark-green);margin-bottom:.6rem}
+
 .view h2{font-size:1.4rem;color:var(--dark-green);margin:1.8rem 0 .7rem}
+
 .view h3{font-size:1.1rem;color:var(--dark-green);margin:1.3rem 0 .5rem}
+
 .lead{font-size:1.1rem;color:var(--text-mid);line-height:1.75;margin-bottom:1rem}
+
 .view p{margin-bottom:.9rem;color:var(--text-mid)}
+
 .view strong{color:var(--text-dark)}
+
 .view ul,.view ol{margin:.4rem 0 1.1rem 1.3rem}
+
 .view li{margin-bottom:.5rem;color:var(--text-mid)}
+
+
 
 .divider{height:3px;width:60px;background:var(--yellow);border-radius:3px;margin:1.1rem 0 1.7rem}
 
+
+
 /* CARDS (no accent strip; soft icon chip carries the accent) */
+
 .card-grid{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:1.5rem 0}
+
 .card{background:var(--white);border-radius:12px;padding:1.4rem;box-shadow:0 2px 16px rgba(16,75,56,.08);transition:transform .2s,box-shadow .2s}
+
 .card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(16,75,56,.14)}
+
 .card .icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:.8rem;background:var(--green-tint)}
+
 .card .icon.g{background:var(--green-tint)}
+
 .card .icon.o{background:var(--orange-tint)}
+
 .card .icon.y{background:var(--yellow-tint)}
+
 .card h3{margin:0 0 .4rem;font-size:1.02rem;color:var(--dark-green)}
+
 .card p{font-size:.92rem;margin:0;line-height:1.6}
+
 .card .pid{display:block;font-family:'Century Gothic',sans-serif;font-weight:700;color:var(--bright-orange);font-size:.74rem;letter-spacing:.05em;margin-bottom:.15rem}
 
+
+
 /* CALLOUT */
+
 .callout{background:var(--green-tint);border-left:5px solid var(--green);border-radius:8px;padding:1.1rem 1.3rem;margin:1.4rem 0}
+
 .callout.orange{background:var(--orange-tint);border-left-color:var(--bright-orange)}
+
 .callout.yellow{background:var(--yellow-tint);border-left-color:var(--yellow)}
+
 .callout h4{font-size:.95rem;color:var(--dark-green);margin-bottom:.35rem;letter-spacing:0}
+
 .callout p{margin:0;font-size:.95rem}
+
 .callout p+p{margin-top:.5rem}
 
+
+
 /* PRINCIPLE LIST */
+
 .principle{display:flex;gap:1rem;align-items:flex-start;background:#fff;border-radius:10px;padding:1.05rem 1.2rem;margin-bottom:.85rem;box-shadow:0 2px 12px rgba(16,75,56,.06)}
+
 .principle .letter{flex-shrink:0;width:42px;height:42px;border-radius:10px;background:var(--dark-green);color:var(--yellow);font-family:'Century Gothic',sans-serif;font-weight:700;font-size:1.4rem;display:flex;align-items:center;justify-content:center}
+
 .principle .letter.o{background:var(--bright-orange);color:#fff}
+
 .principle .letter.g{background:var(--green);color:#fff}
+
 .principle .letter.y{background:var(--yellow);color:var(--dark-green)}
+
 .principle h4{font-size:1rem;color:var(--dark-green);margin-bottom:.2rem;letter-spacing:0}
+
 .principle p{font-size:.92rem;margin:0}
 
+
+
 /* QUIZ */
+
 .quiz-intro{display:flex;align-items:center;gap:.7rem;margin-bottom:.2rem}
+
 .quiz-intro .badge{background:var(--yellow);color:var(--dark-green);font-family:'Century Gothic',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .6rem;border-radius:5px}
+
 .quiz{background:var(--white);border-radius:14px;padding:1.7rem;margin-top:1.4rem;box-shadow:0 4px 24px rgba(16,75,56,.1)}
+
 .q{margin-bottom:1.5rem;padding-bottom:1.3rem;border-bottom:1px dashed #d8d2c4}
+
 .q:last-of-type{border-bottom:none;margin-bottom:.6rem}
+
 .q .qtext{font-weight:700;color:var(--text-dark);font-family:'Open Sans',sans-serif;margin-bottom:.2rem;font-size:1rem}
+
 .q .qhint{font-size:.8rem;color:var(--bright-orange);font-weight:600;margin-bottom:.7rem;letter-spacing:.02em}
+
 .opt{display:flex;align-items:flex-start;gap:.7rem;padding:.6rem .8rem;border:2px solid #e7e1d3;border-radius:8px;margin-bottom:.5rem;cursor:pointer;transition:border-color .15s,background .15s;font-size:.95rem;color:var(--text-mid)}
+
 .opt:hover{border-color:var(--green)}
+
 .opt input{margin-top:.28rem;width:16px;height:16px;accent-color:var(--dark-green);cursor:pointer;flex-shrink:0}
+
 .opt.correct{border-color:var(--ok);background:#edf7ef}
+
 .opt.wrong{border-color:var(--err);background:#fbecea}
+
 .opt.missed{border-color:var(--ok);background:#edf7ef;border-style:dashed}
+
 .opt .mark{margin-left:auto;font-weight:700;font-size:.85rem;display:none}
+
 .opt.correct .mark,.opt.wrong .mark,.opt.missed .mark{display:inline}
+
 .opt.correct .mark{color:var(--ok)}
+
 .opt.wrong .mark{color:var(--err)}
+
 .opt.missed .mark{color:var(--ok)}
+
 .qfeedback{font-size:.88rem;margin-top:.5rem;padding:.6rem .8rem;border-radius:7px;display:none}
+
 .qfeedback.show{display:block}
+
 .qfeedback.right{background:#edf7ef;color:#1f6b39}
+
 .qfeedback.partial{background:#fff7dd;color:#8a6400}
+
 .quiz-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+
 .quiz-score{font-weight:700;font-family:'Century Gothic',sans-serif;color:var(--dark-green);display:none}
+
 .quiz-score.show{display:inline}
 
+
+
 /* BUTTONS */
+
 .btn{display:inline-block;font-family:'Century Gothic','Futura',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.07em;text-transform:uppercase;padding:.8rem 1.6rem;border-radius:7px;transition:background .2s,transform .15s;cursor:pointer;border:none}
+
 .btn-primary{background:var(--bright-orange);color:var(--white)}
+
 .btn-primary:hover{background:var(--orange);transform:translateY(-2px)}
+
 .btn-secondary{background:transparent;color:var(--dark-green);border:2.5px solid var(--dark-green)}
+
 .btn-secondary:hover{background:var(--dark-green);color:var(--cream)}
 
+
+
 .pager{display:flex;justify-content:space-between;align-items:center;margin-top:2.6rem;gap:1rem;flex-wrap:wrap;border-top:1px solid #e3ddcd;padding-top:1.4rem}
+
 .pager .spacer{flex:1}
 
+
+
 /* TIMELINE / CHECKLIST */
+
 .tl-meta{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.4rem 0 1.6rem}
+
 .tl-chip{background:#fff;border-radius:8px;padding:.7rem 1rem;box-shadow:0 2px 12px rgba(16,75,56,.06);border-left:4px solid var(--green);min-width:155px;flex:1}
+
 .tl-chip .when{font-family:'Century Gothic',sans-serif;font-weight:700;color:var(--dark-green);font-size:.95rem}
+
 .tl-chip .what{font-size:.78rem;color:var(--text-mid);margin-top:.15rem}
+
 .tl-chip.k1{border-left-color:var(--bright-orange)}
+
 .tl-chip.k2{border-left-color:var(--yellow)}
+
 .tl-chip.k3{border-left-color:var(--dark-green)}
 
+
+
 .stage{background:#fff;border-radius:14px;margin-bottom:1.5rem;box-shadow:0 3px 18px rgba(16,75,56,.08);overflow:hidden}
+
 .stage-head{padding:1.2rem 1.5rem .9rem;display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap}
+
 .stage-head .meta{flex:1;min-width:200px}
+
 .stage-head .phase{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bright-orange);font-weight:700}
+
 .stage.s1 .stage-head .phase{color:var(--bright-orange)}
+
 .stage-head h3{font-size:1.22rem;color:var(--dark-green);margin:.2rem 0 .15rem}
+
 .stage-head .date{font-size:.85rem;color:var(--text-mid);font-weight:600}
+
 .stage-head .date .pill{display:inline-block;background:var(--green-tint);color:var(--dark-green);border-radius:20px;padding:.15rem .7rem;font-size:.76rem;font-weight:700;margin-left:.2rem}
+
 .mini-prog{width:100%;max-width:190px}
+
 .mini-prog .t{font-size:.72rem;color:var(--text-mid);display:flex;justify-content:space-between;margin-bottom:.25rem;font-weight:600}
+
 .mini-track{height:7px;border-radius:5px;background:#ece6d8;overflow:hidden}
+
 .mini-bar{height:100%;width:0;background:var(--green);border-radius:5px;transition:width .35s}
+
 .stage.s1 .mini-bar{background:var(--bright-orange)}
+
 .stage.s2 .mini-bar{background:var(--orange)}
+
 .stage.s3 .mini-bar{background:var(--dark-green)}
+
 .stage-body{padding:.2rem 1.5rem 1.3rem}
+
 .check{display:flex;align-items:flex-start;gap:.75rem;padding:.7rem .2rem;border-bottom:1px solid #f0ebdf;cursor:pointer}
+
 .check:last-child{border-bottom:none}
+
 .check input{margin-top:.25rem;width:18px;height:18px;accent-color:var(--green);cursor:pointer;flex-shrink:0}
+
 .stage.s1 .check input{accent-color:var(--bright-orange)}
+
 .stage.s2 .check input{accent-color:var(--orange)}
+
 .stage.s3 .check input{accent-color:var(--dark-green)}
+
 .check span{font-size:.94rem;color:var(--text-mid);line-height:1.5}
+
 .check input:checked + span{color:#9a937f;text-decoration:line-through}
+
 .tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.12rem .5rem;border-radius:12px;margin-left:.4rem;vertical-align:middle;white-space:nowrap}
+
 .tag.g0{background:var(--green-tint);color:#2f5d3a}
+
 .tag.g1{background:#fce3d4;color:#a23c0c}
+
 .tag.g2{background:#fff2c9;color:#8a6400}
+
 .tag.g3{background:#dde8e3;color:#104b38}
+
 .reset-row{margin-top:.4rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+
 .reset-btn{background:transparent;border:2px solid #cfc8b6;color:var(--text-mid);border-radius:6px;padding:.45rem 1rem;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;font-family:'Century Gothic',sans-serif}
+
 .reset-btn:hover{border-color:var(--bright-orange);color:var(--bright-orange)}
 
+
+
 .done-banner{background:var(--green-tint);color:var(--dark-green);border-radius:12px;padding:1.1rem 1.3rem;margin-top:1.4rem;text-align:center;display:none;border-left:5px solid var(--green)}
+
 .done-banner.show{display:block}
+
 .done-banner strong{color:var(--dark-green)}
 
+
+
 .legend{font-size:.82rem;color:var(--text-mid);background:#fff;border-radius:8px;padding:.8rem 1rem;margin-bottom:1.4rem;box-shadow:0 2px 10px rgba(16,75,56,.05)}
+
 .legend b{color:var(--dark-green)}
 
+
+
 /* COMPLETION MODAL */
+
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(16,75,56,.55);z-index:200;align-items:center;justify-content:center;padding:1.5rem;animation:fade .3s ease}
+
 .modal-overlay.open{display:flex}
+
 .modal{background:var(--cream);border-radius:18px;max-width:460px;width:100%;padding:2.4rem 2rem;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+
 .modal .ring{width:74px;height:74px;border-radius:50%;background:var(--dark-green);color:var(--yellow);font-size:2.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+
 .modal h2{color:var(--dark-green);font-size:1.6rem;margin-bottom:.5rem}
+
 .modal p{color:var(--text-mid);font-size:.98rem;margin-bottom:1.4rem}
+
 .modal .btn{margin:0 .3rem}
 
+
+
 @media(max-width:860px){
+
   .sidebar{display:none;position:fixed;z-index:80;width:84%;max-width:320px;height:100vh}
+
   .sidebar.open{display:flex}
+
   .mobile-bar{display:flex}
+
   .main-inner{padding:1.6rem 1.2rem 4rem}
+
   .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:70}
+
   .overlay.open{display:block}
+
 }
+
 @media(min-width:861px){.overlay{display:none}}
+
 </style>
+
 </head>
+
 <body>
 
+
+
 <div class="mobile-bar">
+
   <a class="title mobile-return" href="index.html">← Consciousness Commons</a>
+
   <button class="hamb" onclick="toggleNav()">☰ Menu</button>
+
 </div>
+
 <div class="overlay" id="overlay" onclick="toggleNav()"></div>
 
+
+
 <div class="layout">
+
   <!-- SIDEBAR -->
+
   <aside class="sidebar" id="sidebar">
+
     <a class="site-return" href="index.html">← Consciousness Commons</a>
+
     <div class="brand">
+
       <span class="kicker">Open &amp; Reproducible Science</span>
+
       <span class="title">Implementing FAIR Workflows</span>
+
     </div>
+
     <div class="progress-wrap">
+
       <div class="progress-label"><span>Course progress</span><span id="progPct">0%</span></div>
+
       <div class="progress-track"><div class="progress-bar" id="progBar"></div></div>
+
     </div>
+
+
 
     <div class="nav-section">Modules</div>
+
     <button class="nav-item active" data-mod="m1" onclick="go('m1p1')"><span class="dot" id="dot-m1">1</span><span class="lbl">FAIR Foundations</span></button>
+
     <button class="nav-item" data-mod="m2" onclick="go('m2p1')"><span class="dot" id="dot-m2">2</span><span class="lbl">Planning Your Research</span></button>
+
     <button class="nav-item" data-mod="m3" onclick="go('m3p1')"><span class="dot" id="dot-m3">3</span><span class="lbl">Executing &amp; Sharing</span></button>
 
+
+
     <div class="nav-section">Apply It</div>
+
     <button class="nav-item" data-mod="checklist" onclick="go('checklist')"><span class="dot" id="dot-checklist">★</span><span class="lbl">Project Checklist &amp; Timeline</span></button>
 
+
+
     <div class="nav-foot">
+
       Based on “Guide for Researchers to Implement FAIR Workflows,” DataCite &amp; Templeton World Charity Foundation. CC BY 4.0.
+
       <a class="doi" href="https://doi.org/10.5281/zenodo.11355855" target="_blank" rel="noopener noreferrer">doi.org/10.5281/zenodo.11355855</a>
+
     </div>
+
   </aside>
 
+
+
   <!-- MAIN -->
+
   <main class="main">
+
     <div class="main-inner">
 
+
+
       <!-- ============ MODULE 1 · PAGE 1 ============ -->
+
       <section class="view active" id="view-m1p1">
+
         <span class="eyebrow">Module 1 · 1 of 4</span>
+
         <h1>FAIR Foundations</h1>
+
         <div class="divider"></div>
+
         <p class="lead">Conventional research often hides the protocols, datasets, and supporting materials produced along the way. FAIR workflows make those outputs <strong>Findable, Accessible, Interoperable, and Reusable</strong> — turning your whole research process into something others can discover, trust, and build on.</p>
+
         <h2>Why bother making your work FAIR?</h2>
+
         <p>There are three big payoffs, and they reinforce each other throughout a project:</p>
+
         <div class="card-grid">
+
           <div class="card"><h3>Collaboration</h3><p>Science thrives on collaboration. Sharing your work, process, and results — with enough context to make them FAIR — is the first step toward successful partnerships, even when you start out working alone.</p></div>
+
           <div class="card"><h3>Crediting</h3><p>Every stage of research deserves recognition. Showcasing the work behind the paper, and attributing it to the people and organizations involved, lets you acknowledge contributions and demonstrate impact.</p></div>
+
           <div class="card"><h3>Compliance</h3><p>Planning each stage with FAIR in mind helps you meet the policies of institutions, funders, and collaborators — streamlining data sharing, reporting, and preservation later.</p></div>
+
         </div>
+
         <div class="pager">
+
           <span class="spacer"></span>
+
           <button class="btn btn-primary" onclick="go('m1p2')">Next: The FAIR principles →</button>
+
         </div>
+
       </section>
+
+
 
       <!-- ============ MODULE 1 · PAGE 2 ============ -->
+
       <section class="view" id="view-m1p2">
+
         <span class="eyebrow">Module 1 · 2 of 4</span>
+
         <h1>The Four FAIR Principles</h1>
+
         <div class="divider"></div>
+
         <p class="lead">FAIR is about how a research output behaves once you share it. Each letter describes a property you design into the output and its metadata.</p>
+
         <div class="principle"><div class="letter">F</div><div><h4>Findable</h4><p>The output exists as a scholarly record that can be indexed and searched. The most comprehensive index of scholarly works is built from DOI metadata.</p></div></div>
+
         <div class="principle"><div class="letter o">A</div><div><h4>Accessible</h4><p>There is a clear pathway to obtain the work — typically by depositing it in a repository or platform that registers a DOI for the completed output.</p></div></div>
+
         <div class="principle"><div class="letter g">I</div><div><h4>Interoperable</h4><p>The work is described with standardized metadata and meaningfully linked to related works, so it can be incorporated into different settings and systems.</p></div></div>
+
         <div class="principle"><div class="letter y">R</div><div><h4>Reusable</h4><p>Enough context is provided — licensing, provenance, and community standards in the metadata — that others can understand and responsibly reuse it.</p></div></div>
+
         <div class="callout" style="margin-top:1.8rem">
+
           <h4>Further reading</h4>
+
           <p>The FAIR Principles were formally published in <em>Scientific Data</em> (2016): <a href="http://www.nature.com/articles/sdata201618" target="_blank" rel="noopener noreferrer" style="color:var(--dark-green);text-decoration:underline;">Wilkinson, M.D., et al. The FAIR Guiding Principles for scientific data management and stewardship</a>.</p>
+
         </div>
+
         <div class="pager">
+
           <button class="btn btn-secondary" onclick="go('m1p1')">← Back</button>
+
           <span class="spacer"></span>
+
           <button class="btn btn-primary" onclick="go('m1p3')">Next: PIDs &amp; metadata →</button>
+
         </div>
+
       </section>
+
+
 
       <!-- ============ MODULE 1 · PAGE 3 ============ -->
+
       <section class="view" id="view-m1p3">
+
         <span class="eyebrow">Module 1 · 3 of 4</span>
+
         <h1>The Engine: PIDs &amp; Metadata</h1>
+
         <div class="divider"></div>
+
         <p class="lead">Persistent identifiers (<strong>PIDs</strong>) are central to all four principles. A PID is a permanent, unique reference for a thing — an output, a person, an organization — together with structured metadata describing it.</p>
+
         <p>The DOI and metadata created when you submit and share an output is <em>what actually makes it FAIR</em>: the metadata describes the work, and links it to related people, organizations, and funding through <em>their</em> PIDs. This shared infrastructure is what lets diverse scholarly works be discovered and cited globally.</p>
+
         <h3>Three PIDs you will use constantly</h3>
+
         <div class="card-grid">
+
           <div class="card"><span class="pid">DOI · <a href="https://doi.org" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">doi.org</a></span><h3>Outputs</h3><p>Identifiers for most research outputs — datasets, code, protocols, preprints, papers, posters, DMPs.</p></div>
+
           <div class="card"><span class="pid">ORCID · <a href="https://orcid.org" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">orcid.org</a></span><h3>People</h3><p>Uniquely identify researchers and contributors, so credit follows the right person across every output.</p></div>
+
           <div class="card"><span class="pid">ROR · <a href="https://ror.org" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">ror.org</a></span><h3>Organizations</h3><p>Identify the institutions that host or fund research, so affiliations and funding are unambiguous.</p></div>
+
         </div>
+
         <div class="callout orange">
+
           <h4>The one idea to hold onto</h4>
+
           <p>FAIRness is not a final publishing step — it is created output by output, throughout the project, by registering PIDs and describing each output with rich, linked metadata.</p>
+
         </div>
+
         <div class="pager">
+
           <button class="btn btn-secondary" onclick="go('m1p2')">← Back</button>
+
           <span class="spacer"></span>
+
           <button class="btn btn-primary" onclick="go('m1q')">Next: Module 1 quiz →</button>
+
         </div>
+
       </section>
+
+
 
       <!-- ============ MODULE 1 · QUIZ ============ -->
+
       <section class="view" id="view-m1q">
+
         <span class="eyebrow">Module 1 · 4 of 4</span>
+
         <div class="quiz-intro"><span class="badge">Quiz</span><h1 style="font-size:1.7rem;margin:0;">Check Your Understanding</h1></div>
+
         <p class="lead" style="margin-top:.7rem;">Four questions. Each may have more than one correct answer — select all that apply.</p>
+
         <div class="quiz" id="quiz-m1">
+
           <div class="q" data-correct="0,1,2">
+
             <div class="qtext">1. What are the three core benefits of incorporating FAIR workflows highlighted in the guide?</div>
+
             <div class="qhint">Select all that apply</div>
+
             <label class="opt"><input type="checkbox"><span>Collaboration</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Crediting</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Compliance</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Guaranteed publication in a high-impact journal</span><span class="mark"></span></label>
+
             <div class="qfeedback"></div>
+
           </div>
+
           <div class="q" data-correct="0,2,3">
+
             <div class="qtext">2. Which statements correctly match a FAIR principle to what it means?</div>
+
             <div class="qhint">Select all that apply</div>
+
             <label class="opt"><input type="checkbox"><span>Findable — the work is indexed and searchable, largely via DOI metadata</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Accessible — the work is free of any licensing or usage terms</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Interoperable — described with standardized metadata and linked to related works</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Reusable — annotated with licensing, provenance, and community standards</span><span class="mark"></span></label>
+
             <div class="qfeedback"></div>
+
           </div>
+
           <div class="q" data-correct="1,3">
+
             <div class="qtext">3. Which statements about persistent identifiers (PIDs) and metadata are accurate?</div>
+
             <div class="qhint">Select all that apply</div>
+
             <label class="opt"><input type="checkbox"><span>PIDs are only needed once, at final publication of the paper</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>The DOI and metadata created when sharing an output are what make it FAIR</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Metadata describes only the work itself and cannot connect to people or funders</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>PID metadata links an output to related people, organizations, and funding through their own PIDs</span><span class="mark"></span></label>
+
             <div class="qfeedback"></div>
+
           </div>
+
           <div class="q" data-correct="0,1,2">
+
             <div class="qtext">4. Match each commonly used PID to what it identifies.</div>
+
             <div class="qhint">Select all that apply</div>
+
             <label class="opt"><input type="checkbox"><span>DOI identifies research outputs (datasets, code, preprints, papers…)</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>ORCID iD identifies individual researchers and contributors</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>ROR iD identifies research-hosting or funding organizations</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>ORCID iD identifies the funding grant for a project</span><span class="mark"></span></label>
+
             <div class="qfeedback"></div>
+
           </div>
+
           <div class="quiz-actions">
+
             <button class="btn btn-primary" onclick="grade('m1')">Check Answers</button>
+
             <span class="quiz-score" id="score-m1"></span>
+
           </div>
+
         </div>
+
         <div class="pager">
+
           <button class="btn btn-secondary" onclick="go('m1p3')">← Back</button>
+
           <span class="spacer"></span>
+
           <button class="btn btn-primary" onclick="go('m2p1')">Next: Module 2 →</button>
+
         </div>
+
       </section>
+
+
 
       <!-- ============ MODULE 2 · PAGE 1 ============ -->
+
       <section class="view" id="view-m2p1">
+
         <span class="eyebrow">Module 2 · 1 of 3</span>
+
         <h1>Stage 1 — Project Planning</h1>
+
         <div class="divider"></div>
+
         <p class="lead">The best time to make research FAIR is before any data is collected. Project planning creates the reference points — project pages and data management plans — that every later output will link back to.</p>
+
         <p><strong>Why:</strong> Create points of reference through which all relevant outputs of the project can be linked and discovered, and establish a shared understanding of the FAIR practices the team will follow.</p>
+
         <p><strong>What you can share:</strong> a project page (e.g. the <a href="https://osf.io/" target="_blank" rel="noopener noreferrer">Open Science Framework</a>) and a data management plan (e.g. <a href="https://dmptool.org/" target="_blank" rel="noopener noreferrer">DMP Tool</a>, <a href="https://argos.openaire.eu/portal/" target="_blank" rel="noopener noreferrer">ARGOS</a>).</p>
+
         <div class="callout">
+
           <h4>How to keep it FAIR</h4>
+
           <p>Use tools and platforms integrated with open infrastructure to create and share outputs. Register DOIs for each output, and use PIDs to reference the related people, organizations, and resources in the metadata.</p>
+
         </div>
+
         <p>Project planning is the moment to list your resources — researchers, facilities, funding — and capture their PIDs so they can be credited consistently:</p>
+
         <ul>
+
           <li>Make sure every researcher has an <strong><a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID iD</a></strong> and every organization a <strong><a href="https://ror.org/" target="_blank" rel="noopener noreferrer">ROR iD</a></strong>.</li>
+
           <li>Register a <a href="https://help.osf.io/article/353-welcome-to-projects" target="_blank" rel="noopener noreferrer"><strong>DOI for the project</strong></a> and a <a href="https://dmptool.org/quick_start_guide" target="_blank" rel="noopener noreferrer"><strong>DMP ID</strong> for the data management plan</a>.</li>
+
           <li>Confirm the <strong>funding identifier</strong> with the project funder, and link it to the DMP and project.</li>
+
           <li>If the project extends earlier work or reuses datasets, <a href="https://help.osf.io/article/696-metadata-on-the-osf" target="_blank" rel="noopener noreferrer">reference and cite those in the metadata and DMP</a>.</li>
+
         </ul>
+
         <div class="pager">
+
           <button class="btn btn-secondary" onclick="go('m1q')">← Back</button>
+
           <span class="spacer"></span>
+
           <button class="btn btn-primary" onclick="go('m2p2')">Next: Method planning →</button>
+
         </div>
+
       </section>
+
+
 
       <!-- ============ MODULE 2 · PAGE 2 ============ -->
+
       <section class="view" id="view-m2p2">
+
         <span class="eyebrow">Module 2 · 2 of 3</span>
+
         <h1>Stage 2 — Method Planning</h1>
+
         <div class="divider"></div>
+
         <p class="lead">Methodological decisions yield key reference outputs for the whole team — above all, a shared, citable research plan.</p>
+
         <p><strong>Why:</strong> Increase credibility and create a guardrail against bad practice, while boosting reproducibility and reuse through domain-specific metadata standards.</p>
+
         <p><strong>What you can share:</strong> a preregistration / study registration (e.g. the <a href="https://osf.io/" target="_blank" rel="noopener noreferrer">Open Science Framework</a>) and metadata templates (e.g. <a href="https://metadatacenter.org/" target="_blank" rel="noopener noreferrer">CEDAR Workbench</a>). For any method involving hypothesis testing, the best practice is to write a detailed research plan and share it in a registry so it is accessible and citable.</p>
+
         <div class="callout orange">
+
           <h4>How to keep it FAIR</h4>
+
           <p>Everything from project planning still applies — and when you register a new output, reference the project and/or DMP in its DOI metadata. Acknowledge the method's creators, contributors, and supervisors through their ORCID iDs.</p>
+
         </div>
+
         <ul>
+
           <li>Register a <strong><a href="https://help.osf.io/article/330-welcome-to-registrations" target="_blank" rel="noopener noreferrer">DOI</a> for the study registration / experiment plan</strong> detailing data collection, treatment, and analysis.</li>
+
           <li>Register a DOI for any <strong><a href="https://help.zenodo.org/docs/github/archive-software/github-upload/" target="_blank" rel="noopener noreferrer">new tools, standards, or procedures</a></strong> that support the methods.</li>
+
           <li>Reference the umbrella <strong><a href="https://help.osf.io/article/353-welcome-to-projects#Create-a-DOI-HOxs9" target="_blank" rel="noopener noreferrer">project DOI</a></strong> in the study <a href="https://help.osf.io/article/353-welcome-to-projects#Metadata-2UGMZ" target="_blank" rel="noopener noreferrer">registration metadata</a>.</li>
+
           <li>If you reuse existing protocols, or the registration describes analysis of existing datasets, cite them.</li>
+
           <li>If you create multiple registrations, link them with appropriate <a href="https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/relatedidentifier/#b-relationtype" target="_blank" rel="noopener noreferrer">relation-type metadata</a>.</li>
+
         </ul>
+
         <div class="callout yellow">
+
           <h4>The thread that connects everything</h4>
+
           <p>Each new output references the ones before it: the project DOI anchors the DMP; the DMP and project anchor the preregistration. By the time you collect data, there is already a linked web of context — interoperability in action.</p>
+
         </div>
+
         <div class="pager">
+
           <button class="btn btn-secondary" onclick="go('m2p1')">← Back</button>
+
           <span class="spacer"></span>
+
           <button class="btn btn-primary" onclick="go('m2q')">Next: Module 2 quiz →</button>
+
         </div>
+
       </section>
+
+
 
       <!-- ============ MODULE 2 · QUIZ ============ -->
+
       <section class="view" id="view-m2q">
+
         <span class="eyebrow">Module 2 · 3 of 3</span>
+
         <div class="quiz-intro"><span class="badge">Quiz</span><h1 style="font-size:1.7rem;margin:0;">Check Your Understanding</h1></div>
+
         <p class="lead" style="margin-top:.7rem;">Four questions. Each may have more than one correct answer — select all that apply.</p>
+
         <div class="quiz" id="quiz-m2">
+
           <div class="q" data-correct="0,1,3">
+
             <div class="qtext">1. During <em>project planning</em>, which actions help make the project FAIR?</div>
+
             <div class="qhint">Select all that apply</div>
+
             <label class="opt"><input type="checkbox"><span>Ensure all researchers have ORCID iDs and all organizations have ROR iDs</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Register a DOI for the project and a DMP ID for the data management plan</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Wait until the paper is accepted before creating any identifiers</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Link the grant ID to the DMP ID and the project ID</span><span class="mark"></span></label>
+
             <div class="qfeedback"></div>
+
           </div>
+
           <div class="q" data-correct="1,2">
+
             <div class="qtext">2. Which are appropriate outputs to share and register in the planning stages?</div>
+
             <div class="qhint">Select all that apply</div>
+
             <label class="opt"><input type="checkbox"><span>The final peer-reviewed journal article</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>A project page on a platform like the Open Science Framework</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>A data management plan created with a tool like DMP Tool or ARGOS</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Raw results from completed experiments</span><span class="mark"></span></label>
+
             <div class="qfeedback"></div>
+
           </div>
+
           <div class="q" data-correct="0,2,3">
+
             <div class="qtext">3. For research involving hypothesis testing, what does the guide recommend in method planning?</div>
+
             <div class="qhint">Select all that apply</div>
+
             <label class="opt"><input type="checkbox"><span>Create a detailed research plan and share it in a registry so it is accessible and citable</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Keep the analysis plan private until after the results are known</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Register a DOI for the study registration / experiment plan</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Acknowledge the method's creators and contributors via their ORCID iDs</span><span class="mark"></span></label>
+
             <div class="qfeedback"></div>
+
           </div>
+
           <div class="q" data-correct="0,2">
+
             <div class="qtext">4. How should new planning outputs be connected through metadata?</div>
+
             <div class="qhint">Select all that apply</div>
+
             <label class="opt"><input type="checkbox"><span>Reference the project and/or DMP DOI in a new output's metadata</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Leave each output standalone, with no links to other outputs</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>If multiple registrations exist, link them with appropriate relation-type metadata</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Strip out PIDs to keep the metadata short</span><span class="mark"></span></label>
+
             <div class="qfeedback"></div>
+
           </div>
+
           <div class="quiz-actions">
+
             <button class="btn btn-primary" onclick="grade('m2')">Check Answers</button>
+
             <span class="quiz-score" id="score-m2"></span>
+
           </div>
+
         </div>
+
         <div class="pager">
+
           <button class="btn btn-secondary" onclick="go('m2p2')">← Back</button>
+
           <span class="spacer"></span>
+
           <button class="btn btn-primary" onclick="go('m3p1')">Next: Module 3 →</button>
+
         </div>
+
       </section>
+
+
 
       <!-- ============ MODULE 3 · PAGE 1 ============ -->
+
       <section class="view" id="view-m3p1">
+
         <span class="eyebrow">Module 3 · 1 of 3</span>
+
         <h1>Stage 3 — Experiment &amp; Analysis</h1>
+
         <div class="divider"></div>
+
         <p class="lead">Once data starts flowing, FAIR workflows means registering and linking the real products of research — datasets, protocols, code, and results.</p>
+
         <p><strong>Why:</strong> Follow up on the registered activities and mark any deviations, create robust records that supplement your outcomes, and credit everyone who contributed.</p>
+
         <p><strong>What you can share:</strong> experimental protocols (e.g. <a href="https://protocols.io/" target="_blank" rel="noopener noreferrer">protocols.io</a>), analysis code and software (e.g. <a href="https://zenodo.org/" target="_blank" rel="noopener noreferrer">Zenodo</a>), and datasets (e.g. <a href="https://datadryad.org/" target="_blank" rel="noopener noreferrer">Dryad</a>).</p>
+
         <div class="callout">
+
           <h4>How to keep it FAIR</h4>
+
           <p>All earlier practices apply — and when you register a new output, reference the corresponding registration in its DOI metadata, and create references among the related data, code, and protocol.</p>
+
         </div>
+
         <ul>
+
           <li>Register a <strong><a href="https://help.zenodo.org/docs/get-started/quickstart/" target="_blank" rel="noopener noreferrer">DOI for each dataset</a></strong> produced in response to the preregistration, and when applicable, a <strong><a href="https://www.protocols.io/help/getting-started" target="_blank" rel="noopener noreferrer">DOI for the experimental protocol</a></strong>.</li>
+
           <li>Acknowledge contributors on the specific outputs they worked on, using <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID iDs</a> and appropriate <strong><a href="https://credit.niso.org/" target="_blank" rel="noopener noreferrer">contributor roles</a></strong>.</li>
+
           <li>Acknowledge the <strong><a href="https://rrid.site/" target="_blank" rel="noopener noreferrer">instrument or facility</a></strong> used, in the protocol metadata.</li>
+
           <li>Link the dataset, code, and results to their <strong>preregistration</strong>, to each other, and back to the <strong>DMP</strong>.</li>
+
           <li>If you adapt an existing protocol or reuse someone's software, <strong>cite</strong> the original in your derived output.</li>
+
         </ul>
+
         <div class="pager">
+
           <button class="btn btn-secondary" onclick="go('m2q')">← Back</button>
+
           <span class="spacer"></span>
+
           <button class="btn btn-primary" onclick="go('m3p2')">Next: Dissemination →</button>
+
         </div>
+
       </section>
+
+
 
       <!-- ============ MODULE 3 · PAGE 2 ============ -->
+
       <section class="view" id="view-m3p2">
+
         <span class="eyebrow">Module 3 · 2 of 3</span>
+
         <h1>Stage 4 — Dissemination</h1>
+
         <div class="divider"></div>
+
         <p class="lead">Engaging the community starts well before the manuscript is published — and every shared output should carry its own identifier and credit.</p>
+
         <p><strong>Why:</strong> Expedite the spread of project outputs, invite community engagement and feedback, and lower barriers to access.</p>
+
         <p><strong>What you can share:</strong> preprints (e.g. <a href="https://psyarxiv.com/" target="_blank" rel="noopener noreferrer">PsyArXiv</a>, <a href="https://biorxiv.org/" target="_blank" rel="noopener noreferrer">bioRxiv</a>), presentations and posters (e.g. <a href="https://zenodo.org/" target="_blank" rel="noopener noreferrer">Zenodo</a>, <a href="https://figshare.com/" target="_blank" rel="noopener noreferrer">Figshare</a>), and papers (e.g. via <a href="https://chronoshub.org/" target="_blank" rel="noopener noreferrer">ChronosHub</a>).</p>
+
         <div class="callout orange">
+
           <h4>How to keep it FAIR</h4>
+
           <p>Everything above still applies — and now you cite your shared outputs by their DOIs inside manuscripts and presentations, closing the loop between the work and the record of it.</p>
+
         </div>
+
         <ul>
+
           <li>Make key communication materials (poster, slides, recording) <strong><a href="https://help.zenodo.org/docs/deposit/describe-records/resource-type/" target="_blank" rel="noopener noreferrer">publicly accessible with a DOI</a></strong>.</li>
+
           <li>Register a <strong>DOI for the preprint</strong> by depositing to a preprint server.</li>
+
           <li>Acknowledge authors, presenters, and contributors via ORCID iDs and <a href="https://help.zenodo.org/docs/deposit/describe-records/contributors/" target="_blank" rel="noopener noreferrer">contributor roles</a>.</li>
+
           <li><a href="https://help.zenodo.org/docs/deposit/describe-records/funding/" target="_blank" rel="noopener noreferrer">Acknowledge the <strong>grants</strong></a> in the preprint and publication DOI metadata.</li>
+
           <li><a href="https://help.osf.io/article/353-welcome-to-projects#Metadata-2UGMZ" target="_blank" rel="noopener noreferrer">Link the preprint to the <strong>project/registrations</strong></a> it reports on, and to the <strong>manuscript</strong> once submitted.</li>
+
           <li>Cite the key <strong>datasets and software</strong> in the preprint and the formal publication.</li>
+
         </ul>
+
         <div class="callout yellow">
+
           <h4>Putting it together</h4>
+
           <p>Across all four stages the move is the same: register a PID for each output, describe it with rich metadata, and link it to the people, organizations, funding, and outputs around it. Do that consistently and your research becomes FAIR by design.</p>
+
         </div>
+
         <div class="pager">
+
           <button class="btn btn-secondary" onclick="go('m3p1')">← Back</button>
+
           <span class="spacer"></span>
+
           <button class="btn btn-primary" onclick="go('m3q')">Next: Module 3 quiz →</button>
+
         </div>
+
       </section>
+
+
 
       <!-- ============ MODULE 3 · QUIZ ============ -->
+
       <section class="view" id="view-m3q">
+
         <span class="eyebrow">Module 3 · 3 of 3</span>
+
         <div class="quiz-intro"><span class="badge">Quiz</span><h1 style="font-size:1.7rem;margin:0;">Check Your Understanding</h1></div>
+
         <p class="lead" style="margin-top:.7rem;">Four questions. Each may have more than one correct answer — select all that apply.</p>
+
         <div class="quiz" id="quiz-m3">
+
           <div class="q" data-correct="0,1,3">
+
             <div class="qtext">1. In the <em>experiment &amp; analysis</em> stage, which outputs should get their own DOI?</div>
+
             <div class="qhint">Select all that apply</div>
+
             <label class="opt"><input type="checkbox"><span>Each dataset produced in response to the preregistration</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>The experimental protocol</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Nothing — DOIs are only for the final paper</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Analysis code and software</span><span class="mark"></span></label>
+
             <div class="qfeedback"></div>
+
           </div>
+
           <div class="q" data-correct="1,2,3">
+
             <div class="qtext">2. How should contributions and resources be acknowledged during experiment &amp; analysis?</div>
+
             <div class="qhint">Select all that apply</div>
+
             <label class="opt"><input type="checkbox"><span>Only the principal investigator needs to be named</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Credit contributors on the specific outputs they worked on, using ORCID iDs and contributor roles</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Acknowledge the instrument or facility used, in the protocol metadata</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Cite any existing protocol or software package you reused or adapted</span><span class="mark"></span></label>
+
             <div class="qfeedback"></div>
+
           </div>
+
           <div class="q" data-correct="0,1,2">
+
             <div class="qtext">3. Which links should you create among experiment &amp; analysis outputs?</div>
+
             <div class="qhint">Select all that apply</div>
+
             <label class="opt"><input type="checkbox"><span>Link the dataset, code, and results to their preregistration</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Link the protocol, dataset, code, and results to each other when shared separately</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Link the outputs back to the DMP</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Avoid linking outputs so each can be judged in isolation</span><span class="mark"></span></label>
+
             <div class="qfeedback"></div>
+
           </div>
+
           <div class="q" data-correct="0,1,2,3">
+
             <div class="qtext">4. Which statements about dissemination are correct?</div>
+
             <div class="qhint">Select all that apply</div>
+
             <label class="opt"><input type="checkbox"><span>Dissemination starts well before the manuscript is published</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Posters, slides, and recordings should be publicly accessible and identified with a DOI</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Grants should be acknowledged in the preprint and publication DOI metadata</span><span class="mark"></span></label>
+
             <label class="opt"><input type="checkbox"><span>Key datasets and software should be cited in the preprint and the formal publication</span><span class="mark"></span></label>
+
             <div class="qfeedback"></div>
+
           </div>
+
           <div class="quiz-actions">
+
             <button class="btn btn-primary" onclick="grade('m3')">Check Answers</button>
+
             <span class="quiz-score" id="score-m3"></span>
+
           </div>
+
         </div>
+
         <div class="pager">
+
           <button class="btn btn-secondary" onclick="go('m3p2')">← Back</button>
+
           <span class="spacer"></span>
+
           <button class="btn btn-primary" onclick="go('checklist')">Next: Project checklist →</button>
+
         </div>
+
       </section>
+
+
 
       <!-- ============ CHECKLIST ============ -->
+
       <section class="view" id="view-checklist">
+
         <span class="eyebrow">Apply It</span>
+
         <h1>Your FAIR Project Checklist</h1>
+
         <div class="divider"></div>
+
         <p class="lead">Complete these FAIR milestones at two key points in your Consciousness Commons project. Tick items as you complete them — each stage tracks its own progress.</p>
+
         <p style="font-size:.95rem;color:var(--text-mid);font-style:italic;margin-bottom:1.4rem;">These items are guidelines, not all of which apply to every project. Tick off all items that apply to your research.</p>
 
+
+
         <div class="reset-row">
+
           <span style="font-weight:700;font-family:'Century Gothic',sans-serif;color:var(--dark-green)" id="overallCount">0 of 0 complete</span>
+
           <button class="reset-btn" onclick="resetChecks()">Reset checklist</button>
+
         </div>
+
+
 
         <!-- STAGE 0: PROPOSAL SUBMISSION -->
+
         <div class="stage s0" style="margin-top:1.2rem">
+
           <div class="stage-head">
+
             <div class="meta">
+
               <div class="phase">Proposal Submission</div>
+
               <h3>Project Planning &amp; Method Preparation</h3>
+
               <div class="date">Before <span class="pill">Jul 26, 2026</span></div>
+
             </div>
+
             <div class="mini-prog"><div class="t"><span>Stage progress</span><span id="pct-s0">0%</span></div><div class="mini-track"><div class="mini-bar" id="bar-s0"></div></div></div>
+
           </div>
+
           <div class="stage-body" data-stage="s0">
+
             <label class="check"><input type="checkbox"><span>All researchers in the project have ORCID iDs.</span></label>
+
             <label class="check"><input type="checkbox"><span>All organizations involved in the project have ROR iDs.</span></label>
+
             <label class="check"><input type="checkbox"><span>The project itself has a DOI.</span></label>
+
             <label class="check"><input type="checkbox"><span>A DOI (DMP ID) is registered for the data management plan.</span></label>
+
             <label class="check"><input type="checkbox"><span>A DOI is registered for the grant or award that funds the project.</span></label>
+
             <label class="check"><input type="checkbox"><span>ORCID iDs of researchers and ROR iDs of organizations are linked to the project and DMP.</span></label>
+
             <label class="check"><input type="checkbox"><span>The grant ID is linked to the DMP ID and the project ID.</span></label>
+
             <label class="check"><input type="checkbox"><span>If this extends a previous project, it is referenced in the project metadata.</span></label>
+
             <label class="check"><input type="checkbox"><span>If the project will reuse existing datasets or resources, they are cited in the DMP.</span></label>
+
             <label class="check"><input type="checkbox"><span>A DOI is registered for the study registration / experiment plan detailing data collection, treatment, and analysis.</span></label>
+
             <label class="check"><input type="checkbox"><span>A DOI is registered for newly created tools, standards, or procedures that support the methods.</span></label>
+
             <label class="check"><input type="checkbox"><span>Creators, contributors, and supervisors of the methodology are acknowledged via their ORCID iDs.</span></label>
+
             <label class="check"><input type="checkbox"><span>The umbrella project is referenced in the study registration metadata through its DOI.</span></label>
+
             <label class="check"><input type="checkbox"><span>If the experiment reuses protocol/methodology documents, they are referenced.</span></label>
+
             <label class="check"><input type="checkbox"><span>If multiple registrations are created, they are linked using appropriate relation-type metadata.</span></label>
+
             <label class="check"><input type="checkbox"><span>If the registration describes analysis of existing datasets or protocols, they are cited.</span></label>
+
           </div>
+
         </div>
+
+
 
         <!-- STAGE 1: FINAL REPORT -->
+
         <div class="stage s1">
+
           <div class="stage-head">
+
             <div class="meta">
+
               <div class="phase">Final Report</div>
+
               <h3>Experiment, Analysis &amp; Dissemination</h3>
+
               <div class="date">By <span class="pill">Dec 16, 2026</span></div>
+
             </div>
+
             <div class="mini-prog"><div class="t"><span>Stage progress</span><span id="pct-s1">0%</span></div><div class="mini-track"><div class="mini-bar" id="bar-s1"></div></div></div>
+
           </div>
+
           <div class="stage-body" data-stage="s1">
+
             <label class="check"><input type="checkbox"><span>A DOI is registered for each dataset produced in response to the preregistration.</span></label>
+
             <label class="check"><input type="checkbox"><span>A DOI is registered for the experimental protocol.</span></label>
+
             <label class="check"><input type="checkbox"><span>All contributing researchers are acknowledged on the specific outputs they worked on, using ORCID iDs and contributor roles.</span></label>
+
             <label class="check"><input type="checkbox"><span>The instrument or facility used in the experiment is acknowledged in the protocol metadata.</span></label>
+
             <label class="check"><input type="checkbox"><span>The dataset, analysis code, and results are linked to their corresponding preregistration.</span></label>
+
             <label class="check"><input type="checkbox"><span>If shared separately, the protocol, dataset, analysis code, and results are linked to each other.</span></label>
+
             <label class="check"><input type="checkbox"><span>The dataset, code, and other resources are linked back to the DMP.</span></label>
+
             <label class="check"><input type="checkbox"><span>If a protocol is adapted from another project, the original is cited in the new one.</span></label>
+
             <label class="check"><input type="checkbox"><span>If the analysis reused a shared software package, the software is cited in the derived dataset.</span></label>
+
             <label class="check"><input type="checkbox"><span>Make key communication materials (poster, presentation, recording) publicly accessible and identified with a DOI.</span></label>
+
             <label class="check"><input type="checkbox"><span>Acknowledge the authors, presenters, and contributors to the poster/slides/recording, using ORCID iDs and contributor roles.</span></label>
+
             <label class="check"><input type="checkbox"><span>Acknowledge the grants in the preprint and publication DOI metadata.</span></label>
+
             <label class="check"><input type="checkbox"><span>A DOI is registered for the preprint.</span></label>
+
             <label class="check"><input type="checkbox"><span>Cite the key datasets and software in the preprint and the formal publication.</span></label>
+
             <label class="check"><input type="checkbox"><span>Link the preprint to the manuscript when submitted to a journal.</span></label>
+
           </div>
+
         </div>
+
+
 
         <div class="done-banner" id="doneBanner">
+
           <strong>Every item checked!</strong> Your Consciousness Commons project is fully FAIR across all four stages.
+
         </div>
+
+
 
         <div class="pager">
+
           <button class="btn btn-secondary" onclick="go('m3q')">← Back to Module 3</button>
+
           <span class="spacer"></span>
+
           <button class="btn btn-primary" onclick="completeTutorial()">Complete tutorial ✓</button>
+
         </div>
+
       </section>
 
+
+
     </div>
+
   </main>
+
 </div>
+
+
 
 <!-- COMPLETION MODAL -->
+
 <div class="modal-overlay" id="completeModal">
+
   <div class="modal">
+
     <div class="ring">✓</div>
+
     <h2>Tutorial Complete</h2>
+
     <p>You've worked through all three modules and the project checklist. You now have a stage-by-stage playbook for making your Consciousness Commons research FAIR.</p>
+
     <button class="btn btn-primary" onclick="closeModal()">Done</button>
+
     <button class="btn btn-secondary" onclick="closeModal();go('m1p1')">Review from start</button>
+
   </div>
+
 </div>
 
+
+
 <script>
+
 /* ---------- PAGE ORDER ---------- */
+
 var PAGES=['m1p1','m1p2','m1p3','m1q','m2p1','m2p2','m2q','m3p1','m3p2','m3q','checklist'];
+
 var maxReached=0;
+
 var moduleDone={m1:false,m2:false,m3:false};
 
+
+
 function moduleOf(id){
+
   if(id.indexOf('m1')===0)return 'm1';
+
   if(id.indexOf('m2')===0)return 'm2';
+
   if(id.indexOf('m3')===0)return 'm3';
+
   return 'checklist';
+
 }
+
+
 
 function go(id){
+
   PAGES.forEach(function(p){
+
     var v=document.getElementById('view-'+p);
+
     if(v) v.classList.toggle('active', p===id);
+
   });
+
   // sidebar highlight by module
+
   var mod=moduleOf(id);
+
   document.querySelectorAll('.nav-item').forEach(function(n){
+
     n.classList.toggle('active', n.getAttribute('data-mod')===mod);
+
   });
+
   // progress = furthest page reached
+
   var idx=PAGES.indexOf(id);
+
   if(idx>maxReached) maxReached=idx;
+
   updateProgress();
+
   window.scrollTo({top:0,behavior:'smooth'});
+
   var sb=document.getElementById('sidebar'); if(sb) sb.classList.remove('open');
+
   var ov=document.getElementById('overlay'); if(ov) ov.classList.remove('open');
+
 }
+
+
 
 function toggleNav(){
+
   document.getElementById('sidebar').classList.toggle('open');
+
   document.getElementById('overlay').classList.toggle('open');
+
 }
+
+
 
 /* ---------- PROGRESS (position through the tutorial) ---------- */
+
 function updateProgress(){
+
   var pct=Math.round((maxReached+1)/PAGES.length*100);
+
   if(pct>100)pct=100;
+
   document.getElementById('progBar').style.width=pct+'%';
+
   document.getElementById('progPct').textContent=pct+'%';
+
 }
+
+
 
 /* ---------- QUIZ GRADING ---------- */
+
 function grade(m){
+
   var quiz=document.getElementById('quiz-'+m);
+
   var qs=quiz.querySelectorAll('.q');
+
   var totalQ=qs.length, fullyRight=0;
+
   qs.forEach(function(q){
+
     var correct=q.getAttribute('data-correct').split(',').map(Number);
+
     var opts=q.querySelectorAll('.opt');
+
     var fb=q.querySelector('.qfeedback');
+
     var allRight=true;
+
     opts.forEach(function(opt,i){
+
       var box=opt.querySelector('input');
+
       var mark=opt.querySelector('.mark');
+
       opt.classList.remove('correct','wrong','missed');
+
       var shouldBe=correct.indexOf(i)>-1;
+
       var checked=box.checked;
+
       if(shouldBe && checked){opt.classList.add('correct');mark.textContent='✓';}
+
       else if(!shouldBe && checked){opt.classList.add('wrong');mark.textContent='✗';allRight=false;}
+
       else if(shouldBe && !checked){opt.classList.add('missed');mark.textContent='Missed';allRight=false;}
+
       else {mark.textContent='';}
+
     });
+
     fb.classList.remove('right','partial','show');
+
     if(allRight){fb.textContent='Correct — well done.';fb.classList.add('right','show');fullyRight++;}
+
     else{fb.textContent='Not quite. Correct answers are marked in green; remove the red ones.';fb.classList.add('partial','show');}
+
   });
+
   var score=document.getElementById('score-'+m);
+
   score.textContent='Score: '+fullyRight+' / '+totalQ+(fullyRight===totalQ?'  ✓ Module complete':'');
+
   score.classList.add('show');
+
   moduleDone[m]=(fullyRight===totalQ);
+
   var dot=document.getElementById('dot-'+m);
+
   var nav=document.querySelector('.nav-item[data-mod="'+m+'"]');
+
   if(moduleDone[m]){ if(dot) dot.textContent='✓'; if(nav) nav.classList.add('done'); }
+
   else { if(dot) dot.textContent=m.charAt(1); if(nav) nav.classList.remove('done'); }
+
 }
+
+
 
 /* ---------- CHECKLIST ---------- */
+
 function refreshStage(stage){
+
   var body=document.querySelector('.stage-body[data-stage="'+stage+'"]');
+
   var boxes=body.querySelectorAll('input[type=checkbox]');
+
   var done=0; boxes.forEach(function(b){if(b.checked)done++;});
+
   var pct=boxes.length?Math.round(done/boxes.length*100):0;
+
   document.getElementById('bar-'+stage).style.width=pct+'%';
+
   document.getElementById('pct-'+stage).textContent=pct+'%';
+
 }
+
 function refreshAllChecks(){
+
   ['s0','s1'].forEach(refreshStage);
+
   var all=document.querySelectorAll('.stage-body input[type=checkbox]');
+
   var done=0; all.forEach(function(b){if(b.checked)done++;});
+
   document.getElementById('overallCount').textContent=done+' of '+all.length+' complete';
+
   document.getElementById('doneBanner').classList.toggle('show', done===all.length && all.length>0);
+
 }
+
 function resetChecks(){
+
   document.querySelectorAll('.stage-body input[type=checkbox]').forEach(function(b){b.checked=false;});
+
   refreshAllChecks();
+
 }
+
+
 
 /* ---------- COMPLETION ---------- */
+
 function completeTutorial(){
+
   maxReached=PAGES.length-1;
+
   updateProgress();
+
   document.getElementById('dot-checklist').textContent='✓';
+
   document.querySelector('.nav-item[data-mod="checklist"]').classList.add('done');
+
   document.getElementById('completeModal').classList.add('open');
-}
-function closeModal(){
-  document.getElementById('completeModal').classList.remove('open');
+
 }
 
+function closeModal(){
+
+  document.getElementById('completeModal').classList.remove('open');
+
+}
+
+
+
 /* ---------- WIRE UP ---------- */
+
 document.querySelectorAll('.stage-body input[type=checkbox]').forEach(function(b){
+
   b.addEventListener('change', refreshAllChecks);
+
 });
+
 refreshAllChecks();
+
 updateProgress();
+
 </script>
+
 </body>
+
 </html>
